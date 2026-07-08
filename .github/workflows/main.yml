@@ -1,0 +1,13 @@
+pip install fastapi uvicorn python-multipart pillow pydantic torch diffusers
+# For FLUX also: pip install transformers accelerate
+# Test mode (no downloads, instant):
+MODEL_TYPE=mock python graveguinter_api.py
+
+# Stable Diffusion XL (downloads ~7GB on first run):
+MODEL_TYPE=sdxl python graveguinter_api.py
+
+# FLUX (fast, high quality):
+MODEL_TYPE=flux python graveguinter_api.py
+
+# Your own checkpoint:
+MODEL_TYPE=custom MODEL_PATH=/path/to/your-model.safetensors python graveguinter_api.py
